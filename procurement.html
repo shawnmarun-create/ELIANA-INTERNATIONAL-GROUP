@@ -41,397 +41,117 @@
 
 <!-- Healthcare equipment focus -->
 <!-- ============================================ -->
-<!-- HEALTHCARE EQUIPMENT SECTION – MATCHES WATER SUPPLY SECTION STYLE -->
-<!-- Paste this inside your <body> where you want the section to appear -->
+<!-- HEALTHCARE EQUIPMENT SECTION – EXACT MATCH TO WATER SUPPLY SECTION -->
+/* Paste this inside your <body> - it uses the same CSS classes as your water section */
 <!-- ============================================ -->
 
-<style>
-    /* Healthcare Equipment Section - exact match to Water Supply section */
-    .healthcare-equipment-section {
-        padding: 100px 0;
-        background: linear-gradient(180deg, var(--navy-primary, #0F1A2F) 0%, var(--navy-deep, #0A1428) 100%);
-        position: relative;
-    }
-    
-    .healthcare-equipment-section .container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 32px;
-    }
-    
-    /* Section header - exact match */
-    .healthcare-equipment-section .section-header {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 60px;
-    }
-    
-    .healthcare-equipment-section .section-header .tag {
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--gold-primary, #C89D3A);
-        margin-bottom: 16px;
-        background: rgba(200, 157, 58, 0.12);
-        padding: 6px 14px;
-        border-radius: 30px;
-    }
-    
-    .healthcare-equipment-section .section-header h2 {
-        font-size: 42px;
-        font-weight: 800;
-        margin-bottom: 16px;
-        line-height: 1.2;
-        font-family: 'Montserrat', sans-serif;
-        color: var(--white, #FFFFFF);
-    }
-    
-    .healthcare-equipment-section .section-header h2 span {
-        color: var(--gold-primary, #C89D3A);
-    }
-    
-    .healthcare-equipment-section .section-header p {
-        font-size: 18px;
-        color: var(--gray-text, #B8C4D4);
-    }
-    
-    /* Two column layout - exact match */
-    .healthcare-equipment-section .two-col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-    }
-    
-    @media (max-width: 900px) {
-        .healthcare-equipment-section .two-col {
-            grid-template-columns: 1fr;
-        }
-    }
-    
-    /* Image styling */
-    .healthcare-equipment-section .col-img {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-    }
-    
-    .healthcare-equipment-section .col-img img {
-        width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 20px;
-        transition: transform 0.5s ease;
-    }
-    
-    .healthcare-equipment-section .col-img:hover img {
-        transform: scale(1.02);
-    }
-    
-    /* Right column content */
-    .healthcare-equipment-section .col-text .tag {
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: var(--gold-primary, #C89D3A);
-        margin-bottom: 16px;
-        background: rgba(200, 157, 58, 0.12);
-        padding: 6px 14px;
-        border-radius: 30px;
-    }
-    
-    .healthcare-equipment-section .col-text h2 {
-        font-size: 32px;
-        font-weight: 800;
-        margin-bottom: 16px;
-        font-family: 'Montserrat', sans-serif;
-        color: var(--white, #FFFFFF);
-    }
-    
-    .healthcare-equipment-section .col-text h2 span {
-        color: var(--gold-primary, #C89D3A);
-    }
-    
-    .healthcare-equipment-section .col-text > p {
-        font-size: 16px;
-        color: var(--gray-text, #B8C4D4);
-        margin-bottom: 32px;
-        line-height: 1.6;
-    }
-    
-    /* Equipment grid - matches water product grid */
-    .healthcare-equipment-section .equip-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        margin-top: 8px;
-    }
-    
-    @media (max-width: 600px) {
-        .healthcare-equipment-section .equip-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-    
-    /* Equipment card - matches water card exactly */
-    .healthcare-equipment-section .equip-card {
-        background: var(--navy-light, #162237);
-        border-radius: 20px;
-        overflow: hidden;
-        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-        border: 1px solid rgba(200, 157, 58, 0.1);
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding: 16px;
-    }
-    
-    .healthcare-equipment-section .equip-card:hover {
-        transform: translateY(-4px);
-        border-color: rgba(200, 157, 58, 0.4);
-        box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Card image */
-    .equip-card-img {
-        flex-shrink: 0;
-        width: 70px;
-        height: 70px;
-        background: var(--navy-card, #1A2838);
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
-    
-    .equip-card-img img {
-        width: 55px;
-        height: 55px;
-        object-fit: contain;
-    }
-    
-    /* Card text */
-    .equip-card-info {
-        flex: 1;
-    }
-    
-    .equip-card-info h4 {
-        font-size: 16px;
-        font-weight: 700;
-        margin-bottom: 6px;
-        color: var(--white, #FFFFFF);
-        font-family: 'Montserrat', sans-serif;
-    }
-    
-    .equip-card-info p {
-        font-size: 12px;
-        color: var(--gray-text, #B8C4D4);
-        line-height: 1.4;
-    }
-    
-    /* CTA button */
-    .healthcare-equipment-section .btn-outline {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: transparent;
-        border: 1.5px solid var(--gold-primary, #C89D3A);
-        color: var(--white, #FFFFFF);
-        padding: 12px 28px;
-        border-radius: 40px;
-        font-weight: 600;
-        font-size: 14px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        margin-top: 40px;
-    }
-    
-    .healthcare-equipment-section .btn-outline:hover {
-        background: rgba(200, 157, 58, 0.1);
-        border-color: var(--gold-light, #E0B861);
-        transform: translateY(-2px);
-    }
-    
-    /* Fade-up animation */
-    .healthcare-equipment-section .fade-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    
-    .healthcare-equipment-section .fade-up.in-view {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-        .healthcare-equipment-section {
-            padding: 60px 0;
-        }
-        .healthcare-equipment-section .section-header h2 {
-            font-size: 32px;
-        }
-        .healthcare-equipment-section .col-text h2 {
-            font-size: 28px;
-        }
-        .healthcare-equipment-section .equip-card {
-            padding: 12px;
-        }
-        .equip-card-img {
-            width: 55px;
-            height: 55px;
-        }
-        .equip-card-img img {
-            width: 42px;
-            height: 42px;
-        }
-    }
-</style>
-
-<!-- ========== HTML SECTION ========== -->
-<section class="healthcare-equipment-section">
-    <div class="container">
-        <div class="section-header fade-up">
-            <div class="tag">HEALTHCARE & MEDICAL SUPPLY</div>
-            <h2>Specialised <span>medical procurement</span><br>you can rely on</h2>
-            <p>Hospitals, clinics, home-care providers and care facilities trust Eliana for compliant, on-spec medical equipment delivered on schedule.</p>
-        </div>
-
-        <div class="two-col">
-            <!-- Left column: main image -->
-            <div class="col-img fade-up">
-                <img src="assets/img/eq.jpeg" alt="Medical facility with modern hospital equipment" onerror="this.src='https://placehold.co/600x450/1A2A3A/C89D3A?text=Medical+Equipment'">
-            </div>
-
-            <!-- Right column: catalogue and equipment grid -->
-            <div class="col-text fade-up">
-                <div class="tag">CORE CATALOGUE</div>
-                <h2>Equipment <span>we supply</span></h2>
-                <p>A curated catalogue focused on the items healthcare institutions order most often — with vetted manufacturers, certified compliance and reliable lead times.</p>
-
-                <div class="equip-grid">
-                    <!-- Hospital Beds - he1.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he1.jpeg" alt="Hospital Bed" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=Bed'"></div>
-                        <div class="equip-card-info">
-                            <h4>Hospital Beds</h4>
-                            <p>Manual & semi-electric, infection-control coated frames</p>
-                        </div>
-                    </div>
-                    <!-- Electric Beds - he2.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he2.jpeg" alt="Electric Bed" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=Elec'"></div>
-                        <div class="equip-card-info">
-                            <h4>Electric Beds</h4>
-                            <p>Fully adjustable height/back/leg, quiet motors</p>
-                        </div>
-                    </div>
-                    <!-- ICU Beds - he3.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he3.jpeg" alt="ICU Bed" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=ICU'"></div>
-                        <div class="equip-card-info">
-                            <h4>ICU Beds</h4>
-                            <p>Critical care with integrated scales, CPR release</p>
-                        </div>
-                    </div>
-                    <!-- Patient Mattresses - he4.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he4.jpeg" alt="Patient Mattress" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=Mattress'"></div>
-                        <div class="equip-card-info">
-                            <h4>Patient Mattresses</h4>
-                            <p>Pressure redistribution foam, anti-bacterial covers</p>
-                        </div>
-                    </div>
-                    <!-- Wheelchairs - he5.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he5.jpeg" alt="Wheelchair" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=Chair'"></div>
-                        <div class="equip-card-info">
-                            <h4>Wheelchairs</h4>
-                            <p>Lightweight, foldable, standard & bariatric options</p>
-                        </div>
-                    </div>
-                    <!-- Walkers - he6.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he6.jpeg" alt="Walker" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=Walker'"></div>
-                        <div class="equip-card-info">
-                            <h4>Walkers</h4>
-                            <p>Adjustable height, folding walkers and rollators</p>
-                        </div>
-                    </div>
-                    <!-- Overbed Tables - he7.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he7.jpeg" alt="Overbed Table" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=Table'"></div>
-                        <div class="equip-card-info">
-                            <h4>Overbed Tables</h4>
-                            <p>Tilt-top, smooth glide, hospital-grade finish</p>
-                        </div>
-                    </div>
-                    <!-- Patient Lifts - he8.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he8.jpeg" alt="Patient Lift" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=Lift'"></div>
-                        <div class="equip-card-info">
-                            <h4>Patient Lifts</h4>
-                            <p>Mobile & ceiling lifts, safe transfer solutions</p>
-                        </div>
-                    </div>
-                    <!-- PPE & Consumables - he9.jpeg -->
-                    <div class="equip-card">
-                        <div class="equip-card-img"><img src="assets/img/he9.jpeg" alt="PPE & Consumables" onerror="this.src='https://placehold.co/55x55/1A2A3A/C89D3A?text=PPE'"></div>
-                        <div class="equip-card-info">
-                            <h4>PPE & Consumables</h4>
-                            <p>Gloves, masks, gowns, sanitizers, medical disposables</p>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="contact.html" class="btn-outline">Request Medical Equipment Quote <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Healthcare & Medical Supply</span>
+      <h2>Specialised <span>medical procurement</span><br>you can rely on.</h2>
+      <div class="divider-gold"></div>
+      <p>Hospitals, clinics, home-care providers and care facilities trust Eliana for compliant, on-spec medical equipment delivered on schedule.</p>
     </div>
+    
+    <div class="products-grid">
+      <!-- Hospital Beds -->
+      <article class="product reveal">
+        <div class="product-img"><img src="assets/img/he1.jpeg" alt="Hospital Bed" /></div>
+        <div class="product-body">
+          <div class="size">Hospital Beds</div>
+          <h3>Manual & Semi-Electric</h3>
+          <p>Infection-control coated frames with manual or semi-electric adjustment options.</p>
+        </div>
+      </article>
+      
+      <!-- Electric Beds -->
+      <article class="product reveal delay-1">
+        <div class="product-img"><img src="assets/img/he2.jpeg" alt="Electric Bed" /></div>
+        <div class="product-body">
+          <div class="size">Electric Beds</div>
+          <h3>Fully Adjustable</h3>
+          <p>Height/back/leg positioning with whisper-quiet motors for patient comfort.</p>
+        </div>
+      </article>
+      
+      <!-- ICU Beds -->
+      <article class="product reveal delay-2">
+        <div class="product-img"><img src="assets/img/he3.jpeg" alt="ICU Bed" /></div>
+        <div class="product-body">
+          <div class="size">ICU Beds</div>
+          <h3>Critical Care</h3>
+          <p>Integrated scales, CPR release, and trending capabilities for intensive care.</p>
+        </div>
+      </article>
+      
+      <!-- Patient Mattresses -->
+      <article class="product reveal">
+        <div class="product-img"><img src="assets/img/he4.jpeg" alt="Patient Mattress" /></div>
+        <div class="product-body">
+          <div class="size">Patient Mattresses</div>
+          <h3>Pressure Relief</h3>
+          <p>Pressure redistribution foam with anti-bacterial, waterproof covers.</p>
+        </div>
+      </article>
+      
+      <!-- Wheelchairs -->
+      <article class="product reveal delay-1">
+        <div class="product-img"><img src="assets/img/he5.jpeg" alt="Wheelchair" /></div>
+        <div class="product-body">
+          <div class="size">Wheelchairs</div>
+          <h3>Lightweight & Foldable</h3>
+          <p>Standard and bariatric options with durable, lightweight frames.</p>
+        </div>
+      </article>
+      
+      <!-- Walkers -->
+      <article class="product reveal delay-2">
+        <div class="product-img"><img src="assets/img/he6.jpeg" alt="Walker" /></div>
+        <div class="product-body">
+          <div class="size">Walkers</div>
+          <h3>Adjustable Height</h3>
+          <p>Folding walkers and rollators for stability and mobility support.</p>
+        </div>
+      </article>
+      
+      <!-- Overbed Tables -->
+      <article class="product reveal">
+        <div class="product-img"><img src="assets/img/he7.jpeg" alt="Overbed Table" /></div>
+        <div class="product-body">
+          <div class="size">Overbed Tables</div>
+          <h3>Tilt-Top Design</h3>
+          <p>Smooth-glide, durable hospital-grade finish with tilt-top functionality.</p>
+        </div>
+      </article>
+      
+      <!-- Patient Lifts -->
+      <article class="product reveal delay-1">
+        <div class="product-img"><img src="assets/img/he8.jpeg" alt="Patient Lift" /></div>
+        <div class="product-body">
+          <div class="size">Patient Lifts</div>
+          <h3>Mobile & Ceiling</h3>
+          <p>Safe transfer solutions for caregivers with mobile and ceiling lift options.</p>
+        </div>
+      </article>
+      
+      <!-- PPE & Consumables -->
+      <article class="product reveal delay-2">
+        <div class="product-img"><img src="assets/img/he9.jpeg" alt="PPE & Consumables" /></div>
+        <div class="product-body">
+          <div class="size">PPE & Consumables</div>
+          <h3>Medical Disposables</h3>
+          <p>Gloves, masks, gowns, sanitizers, and daily-use medical disposables.</p>
+        </div>
+      </article>
+    </div>
+    
+    <!-- Optional CTA Button (if you want it) -->
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="contact.html" class="btn-outline" style="display: inline-flex; align-items: center; gap: 10px; background: transparent; border: 1.5px solid var(--gold-primary, #C89D3A); color: var(--white, #FFFFFF); padding: 12px 32px; border-radius: 40px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Request Medical Equipment Quote <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
 </section>
-
-<!-- Scroll Reveal Script -->
-<script>
-    (function() {
-        const section = document.querySelector('.healthcare-equipment-section');
-        if (!section) return;
-        
-        const fadeElements = section.querySelectorAll('.fade-up');
-        
-        function checkFade() {
-            const windowHeight = window.innerHeight;
-            const revealPoint = 100;
-            fadeElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < windowHeight - revealPoint) {
-                    el.classList.add('in-view');
-                }
-            });
-        }
-        
-        checkFade();
-        
-        let ticking = false;
-        window.addEventListener('scroll', function() {
-            if (!ticking) {
-                requestAnimationFrame(function() {
-                    checkFade();
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-        
-        window.addEventListener('load', checkFade);
-    })();
-</script>
 
 <!-- Procurement services -->
 <section style="background:var(--surface)">
